@@ -74,7 +74,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git git-extras)
 
 source $ZSH/oh-my-zsh.sh
-
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

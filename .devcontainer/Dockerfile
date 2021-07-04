@@ -24,15 +24,32 @@ RUN apt-get update \
     && locale-gen en_US.UTF-8 && fc-cache -vf
 
 ENV DEBIAN_FRONTEND=dialog
-ENV SHELL /bin/zsh
+ENV SHELL=/bin/zsh
+
+# Use Yarn 2
+RUN yarn set version berry
+
+ARG USER="node"
+ARG GROUP="node"
+
+USER ${USER}
+
+# Make variables available in Shell Env
+ENV USER=${USER}
+ENV GROUP=${GROUP}
 
 # Install Oh-my-ZSH
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # Install powerlevel10k
-RUN git clone https://github.com/romkatv/powerlevel10k.git /home/node/.oh-my-zsh/custom/themes/powerlevel10k
+RUN git clone https://github.com/romkatv/powerlevel10k.git /home/${USER}/.oh-my-zsh/custom/themes/powerlevel10k
 
-ADD --chown=node:node .zshrc /home/node
+ADD --chown=${USER}:${GROUP} .zshrc /home/${USER}
 
-# Use Yarn 2
-RUN yarn set version berry
+# Configure Linuxbrew
+RUN brew update || true
+# Install handy plugins
+RUN brew install zsh-autosuggestions zsh-syntax-highlighting
+
+# Restore cache ownership
+RUN sudo chown -R ${USER}:${GROUP} ~/.cache

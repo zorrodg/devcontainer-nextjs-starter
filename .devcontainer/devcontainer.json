@@ -4,20 +4,29 @@
 	"name": "Node.js",
 	"build": {
 		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 12, 14, 16
-		"args": { "VARIANT": "14" }
+		"args": {
+			// Update 'VARIANT' to pick a Node version: 12, 14, 16
+			"VARIANT": "14",
+
+			// User name has to match the 'remoteUser' argument for personalization to work
+			"USER": "node",
+			"GROUP": "node"
+		}
 	},
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
-	"search.exclude": {
+		"search.exclude": {
 			"**/.yarn": true,
 			"**/.pnp.*": true
 		},
 		"eslint.nodePath": ".yarn/sdks",
 		"editor.codeActionsOnSave": {
 			"source.eslint.fixAll": true
-		}
+		},
+
+		// Remember to install the font in your host machine
+		"terminal.integrated.fontFamily": "MesloLGS NF"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -27,7 +36,9 @@
 		"wix.vscode-import-cost",
 		"streetsidesoftware.code-spell-checker",
 		"oderwat.indent-rainbow",
-		"ms-azuretools.vscode-docker"
+		"ms-azuretools.vscode-docker",
+		"bierner.markdown-preview-github-styles",
+		"yzhang.markdown-all-in-one"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
