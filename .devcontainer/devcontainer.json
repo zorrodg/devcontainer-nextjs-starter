@@ -38,7 +38,8 @@
 		"oderwat.indent-rainbow",
 		"ms-azuretools.vscode-docker",
 		"bierner.markdown-preview-github-styles",
-		"yzhang.markdown-all-in-one"
+		"yzhang.markdown-all-in-one",
+		"ms-azuretools.vscode-azurefunctions"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

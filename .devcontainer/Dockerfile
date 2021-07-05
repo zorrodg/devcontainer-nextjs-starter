@@ -20,14 +20,12 @@ RUN apt-get update \
     tree \
     jq \
     fonts-powerline \
+    azure-functions-core-tools-3 \
     # set up locale
     && locale-gen en_US.UTF-8 && fc-cache -vf
 
 ENV DEBIAN_FRONTEND=dialog
 ENV SHELL=/bin/zsh
-
-# Use Yarn 2
-RUN yarn set version berry
 
 ARG USER="node"
 ARG GROUP="node"

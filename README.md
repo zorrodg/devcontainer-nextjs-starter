@@ -1,12 +1,13 @@
-# DevContainer Starter (with Next.js)
+# DevContainer Starter (with Next.js and Serverless)
 
 This starter assumes the use of VS Code and [Remote Containers](https://code.visualstudio.com/docs/remote/containers) extension. Check out this [tutorial](https://code.visualstudio.com/docs/remote/containers-tutorial) as well.
 
 ## Features
 
 - Integrated Node.js environment with ZSH, Oh-my-ZSH and Powerlevel10k out of the box.
-- Yarn 2
 - Linuxbrew
+- Next.js
+- Serverless Framework
 - ZSH Autosuggestions and ZSH Syntax Highlighting
 
 ## Instructions
@@ -17,3 +18,11 @@ This starter assumes the use of VS Code and [Remote Containers](https://code.vis
 4. Configure Powerlevel10k to your own unique taste.
 
 Enjoy!
+
+---------------
+
+TODO:
+[x] Configure Azure Functions Locally
+[ ] Configure Yarn Workspaces for both Next.js and Functions
+[ ] Hoist packages to the top
+[ ] Use package.json scripts to launch both Next.js and Azure Functions
