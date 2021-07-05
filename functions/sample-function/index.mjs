@@ -1,3 +1,5 @@
+import addDays from 'date-fns/addDays/index.js';
+
 export default async function handler(context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 

@@ -23,6 +23,7 @@ Enjoy!
 
 TODO:
 [x] Configure Azure Functions Locally
-[ ] Configure Yarn Workspaces for both Next.js and Functions
-[ ] Hoist packages to the top
-[ ] Use package.json scripts to launch both Next.js and Azure Functions
+[x] Configure Yarn Workspaces for both Next.js and Functions
+[x] Use package.json scripts to launch both Next.js and Azure Functions
+[x] Implemented React Query and successfully proxied/fetched from the Azure Function
+[ ] Implement Pulumi for automated IaC

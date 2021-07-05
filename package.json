@@ -2,19 +2,16 @@
   "name": "azure-jamstack",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "functions",
+    "client"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "dev:client": "yarn workspace azure-jamstack-nextjs dev",
+    "dev:functions": "yarn workspace azure-jamstack-functions dev",
+    "dev": "npm-run-all -p dev:client dev:functions"
   },
   "devDependencies": {
-    "eslint": "7.30.0",
-    "eslint-config-next": "11.0.1"
+    "npm-run-all": "^4.1.5"
   }
 }

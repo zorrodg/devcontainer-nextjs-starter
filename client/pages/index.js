@@ -1,10 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { useQuery } from 'react-query';
 
 const imgLoader = ({ src }) => `${src}`;
 
+const useFunctionAPI = () => useQuery('functionData', async () => {
+  const res = await fetch('/azure/sample-function?name=andres');
+  const message = await res.text();
+
+  return message;
+});
+
 export default function Home() {
+  const { isLoading, error, data } = useFunctionAPI();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +25,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          { isLoading ? 'loading...' : data }
         </h1>
 
         <p className={styles.description}>
