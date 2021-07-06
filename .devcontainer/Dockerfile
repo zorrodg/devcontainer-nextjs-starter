@@ -20,7 +20,6 @@ RUN apt-get update \
     tree \
     jq \
     fonts-powerline \
-    azure-functions-core-tools-3 \
     # set up locale
     && locale-gen en_US.UTF-8 && fc-cache -vf
 
@@ -48,6 +47,10 @@ ADD --chown=${USER}:${GROUP} .zshrc /home/${USER}
 RUN brew update || true
 # Install handy plugins
 RUN brew install zsh-autosuggestions zsh-syntax-highlighting
+
+# Install global tools
+RUN yarn global add \ 
+    azure-functions-core-tools@3 --unsafe-perm true
 
 # Restore cache ownership
 RUN sudo chown -R ${USER}:${GROUP} ~/.cache
