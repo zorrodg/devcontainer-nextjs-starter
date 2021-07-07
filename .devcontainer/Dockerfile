@@ -41,8 +41,6 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 # Install powerlevel10k
 RUN git clone https://github.com/romkatv/powerlevel10k.git /home/${USER}/.oh-my-zsh/custom/themes/powerlevel10k
 
-ADD --chown=${USER}:${GROUP} .zshrc /home/${USER}
-
 # Configure Linuxbrew
 RUN brew update || true
 # Install handy plugins

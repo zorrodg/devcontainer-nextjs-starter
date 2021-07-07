@@ -19,7 +19,7 @@ This starter assumes the use of VS Code and [Remote Containers](https://code.vis
 
 Enjoy!
 
----------------
+---
 
 TODO:
 [x] Configure Azure Functions Locally
@@ -27,3 +27,5 @@ TODO:
 [x] Use package.json scripts to launch both Next.js and Azure Functions
 [x] Implemented React Query and successfully proxied/fetched from the Azure Function
 [ ] Implement Pulumi for automated IaC
+[x] Implement Typescript in both Functions and Next.js app
+[x] Configure Eslint and Prettier

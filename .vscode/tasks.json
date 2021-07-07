@@ -7,7 +7,7 @@
       "problemMatcher": "$func-node-watch",
       "isBackground": true,
       "options": {
-        "cwd": "${workspaceFolder}/functions"
+        "cwd": "${workspaceFolder}/src/functions"
       }
     }
   ]

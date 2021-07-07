@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "functions",
-    "client"
+    "src/*"
   ],
   "scripts": {
-    "dev:client": "yarn workspace azure-jamstack-nextjs dev",
-    "dev:functions": "yarn workspace azure-jamstack-functions dev",
+    "dev:client": "yarn workspace client dev",
+    "dev:functions": "yarn workspace functions dev",
     "dev": "npm-run-all -p dev:client dev:functions"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint": "7.30.0",
+    "eslint-config-next": "11.0.1",
+    "prettier": "^2.3.2",
     "npm-run-all": "^4.1.5"
   }
 }

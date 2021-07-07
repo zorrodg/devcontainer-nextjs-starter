@@ -1,0 +1,24 @@
+{
+  "name": "functions",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "build:production": "yarn prestart && yarn",
+    "watch": "tsc --w",
+    "prestart": "yarn build && func extensions install",
+    "start:host": "func start",
+    "dev": "npm-run-all --parallel start:host watch",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/functions": "^1.2.3",
+    "date-fns": "^2.22.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "7.30.0",
+    "typescript": "^4.3.5"
+  }
+}

@@ -1,19 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { useQuery } from 'react-query';
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import { useQuery, UseQueryResult } from "react-query";
 
-const imgLoader = ({ src }) => `${src}`;
+const imgLoader = ({ src }: { src: string }) => `${src}`;
 
-const useFunctionAPI = () => useQuery('functionData', async () => {
-  const res = await fetch('/azure/sample-function?name=andres');
-  const message = await res.text();
+const useFunctionAPI = (): UseQueryResult<string, Error> =>
+  useQuery("functionData", async (): Promise<string> => {
+    const res = await fetch("/azure/sample-ts-function?name=andres");
+    const message = await res.text();
 
-  return message;
-});
+    return message;
+  });
 
-export default function Home() {
-  const { isLoading, error, data } = useFunctionAPI();
+export default function Home(): JSX.Element {
+  const { isLoading, data } = useFunctionAPI();
 
   return (
     <div className={styles.container}>
@@ -24,12 +25,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          { isLoading ? 'loading...' : data }
-        </h1>
+        <h1 className={styles.title}>{isLoading ? "loading..." : data}</h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -70,12 +69,18 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
-            <Image loader={imgLoader} src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image
+              loader={imgLoader}
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              width={72}
+              height={16}
+            />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

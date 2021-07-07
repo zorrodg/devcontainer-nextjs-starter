@@ -1,55 +1,49 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/javascript-node
 {
-	"name": "Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Update 'VARIANT' to pick a Node version: 12, 14, 16
-			"VARIANT": "14",
+  "name": "Node.js",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
 
-			// User name has to match the 'remoteUser' argument for personalization to work
-			"USER": "node",
-			"GROUP": "node"
-		}
-	},
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "search.exclude": {
+      "**/node_modules": true
+    },
+    "azureFunctions.deploySubpath": "src/functions",
+    "azureFunctions.projectLanguage": "JavaScript",
+    "azureFunctions.projectRuntime": "~3",
+    "debug.internalConsoleOptions": "neverOpen",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.eslint.fixAll": true
+    },
+    "editor.formatOnSave": true,
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"search.exclude": {
-			"**/.yarn": true,
-			"**/.pnp.*": true
-		},
-		"eslint.nodePath": ".yarn/sdks",
-		"editor.codeActionsOnSave": {
-			"source.eslint.fixAll": true
-		},
+    "editor.tabSize": 2,
 
-		"editor.tabSize": 2,
+    // Remember to install the font in your host machine
+    "terminal.integrated.fontFamily": "MesloLGS NF"
+  },
 
-		// Remember to install the font in your host machine
-		"terminal.integrated.fontFamily": "MesloLGS NF"
-	},
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "wix.vscode-import-cost",
+    "streetsidesoftware.code-spell-checker",
+    "oderwat.indent-rainbow",
+    "ms-azuretools.vscode-docker",
+    "bierner.markdown-preview-github-styles",
+    "yzhang.markdown-all-in-one",
+    "ms-azuretools.vscode-azurefunctions",
+    "meganrogge.template-string-converter",
+    "esbenp.prettier-vscode"
+  ],
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"wix.vscode-import-cost",
-		"streetsidesoftware.code-spell-checker",
-		"oderwat.indent-rainbow",
-		"ms-azuretools.vscode-docker",
-		"bierner.markdown-preview-github-styles",
-		"yzhang.markdown-all-in-one",
-		"ms-azuretools.vscode-azurefunctions",
-		"meganrogge.template-string-converter"
-	],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node"
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "yarn install"
 }

@@ -30,3 +30,5 @@
 
 # vercel
 .vercel
+
+.devcontainer/.*overrides

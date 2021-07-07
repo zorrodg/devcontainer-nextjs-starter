@@ -1,7 +1,0 @@
-{
-    "azureFunctions.deploySubpath": "functions",
-    "azureFunctions.projectLanguage": "JavaScript",
-    "azureFunctions.projectRuntime": "~3",
-    "debug.internalConsoleOptions": "neverOpen",
-    "editor.tabSize": 2
-}
