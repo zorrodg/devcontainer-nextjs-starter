@@ -56,3 +56,4 @@ RUN yarn global add \
 
 # Restore cache ownership
 RUN sudo chown -R ${USER}:${GROUP} ~/.cache
+RUN mkdir /home/node/overrides
