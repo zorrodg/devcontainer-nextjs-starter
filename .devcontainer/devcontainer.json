@@ -24,7 +24,8 @@
     "editor.tabSize": 2,
 
     // Remember to install the font in your host machine
-    "terminal.integrated.fontFamily": "MesloLGS NF"
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.rendererType": "auto"
   },
 
   // Add the IDs of extensions you want installed when the container is created.

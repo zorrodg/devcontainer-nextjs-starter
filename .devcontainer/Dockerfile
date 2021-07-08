@@ -44,7 +44,11 @@ RUN git clone https://github.com/romkatv/powerlevel10k.git /home/${USER}/.oh-my-
 # Configure Linuxbrew
 RUN brew update || true
 # Install handy plugins
-RUN brew install zsh-autosuggestions zsh-syntax-highlighting
+RUN brew install \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting \
+    pulumi \
+    azure-cli
 
 # Install global tools
 RUN yarn global add \ 

@@ -27,5 +27,6 @@ TODO:
 [x] Use package.json scripts to launch both Next.js and Azure Functions
 [x] Implemented React Query and successfully proxied/fetched from the Azure Function
 [ ] Implement Pulumi for automated IaC
+[ ] Try out a deployment in an Azure Test Account
 [x] Implement Typescript in both Functions and Next.js app
 [x] Configure Eslint and Prettier

@@ -76,6 +76,7 @@ plugins=(git git-extras)
 source $ZSH/oh-my-zsh.sh
 source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # User configuration
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -114,3 +115,4 @@ fi
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin

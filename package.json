@@ -2,9 +2,9 @@
   "name": "azure-jamstack",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "src/*"
-  ],
+  "workspaces": {
+    "packages": ["src/*", "ci"]
+  },
   "scripts": {
     "dev:client": "yarn workspace client dev",
     "dev:functions": "yarn workspace functions dev",
