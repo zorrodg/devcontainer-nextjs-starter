@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": {
-    "packages": ["src/*", "ci"]
+    "packages": ["src/*"]
   },
   "scripts": {
     "dev:client": "yarn workspace client dev",

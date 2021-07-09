@@ -3,7 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "outDir": "bin",
-    "target": "es2016",
+    "lib": ["es2020"],
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,

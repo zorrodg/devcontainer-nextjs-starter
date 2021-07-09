@@ -1,7 +1,8 @@
+import type { AppProps /*, AppContext */ } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "../styles/globals.css";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps): JSX.Element {
   const queryClient = new QueryClient();
 
   return (

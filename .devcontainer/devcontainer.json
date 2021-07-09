@@ -46,5 +46,5 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "yarn install; cp -fv ~/overrides/* ~/ || true; cp -fv ~/overrides/.* ~/ || true"
+  "postCreateCommand": "sudo chown node:node ./node_modules; sudo chown node:node ./ci/node_modules; yarn install; cp -fv ~/overrides/* ~/ || true; cp -fv ~/overrides/.* ~/ || true"
 }
