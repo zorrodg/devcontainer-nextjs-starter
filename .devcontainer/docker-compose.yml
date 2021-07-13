@@ -19,7 +19,7 @@ services:
       - ./.zshrc:/home/node/.zshrc:cached
       - ./.home-overrides:/home/node/overrides:cached
       - node-modules-cache:/workspace/node_modules
-      - node-modules-ci-cache:/workspace/ci/node_modules
+      - node-modules-infrastructure-cache:/workspace/infrastructure/node_modules
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -29,4 +29,4 @@ services:
 
 volumes:
   node-modules-cache:
-  node-modules-ci-cache:
+  node-modules-infrastructure-cache:

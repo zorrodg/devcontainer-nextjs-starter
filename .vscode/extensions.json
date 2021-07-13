@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-azuretools.vscode-azurefunctions",
+    "bierner.markdown-preview-github-styles",
+    "meganrogge.template-string-converter",
+    "yzhang.markdown-all-in-one",
+    "oderwat.indent-rainbow",
+    "gruntfuggly.todo-tree",
+    "wix.vscode-import-cost"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "azureFunctions.deploySubpath": "src/functions",
+  "azureFunctions.projectLanguage": "JavaScript",
+  "azureFunctions.projectRuntime": "~3",
+  "azureFunctions.projectSubpath": "src/functions",
+  "azureFunctions.preDeployTask": "yarn --prod",
+  "azureFunctions.enableOutputTimestamps": true,
+  "azureFunctions.postDeployTask": "",
+  "azureFunctions.projectOpenBehavior": "AddToWorkspace",
+  "debug.internalConsoleOptions": "neverOpen"
+}

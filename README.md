@@ -5,9 +5,9 @@ This starter assumes the use of VS Code and [Remote Containers](https://code.vis
 ## Features
 
 - Integrated Node.js environment with ZSH, Oh-my-ZSH and Powerlevel10k out of the box.
-- Linuxbrew
+- Linuxbrew (run `brew update` to use it)
 - Next.js
-- Serverless Framework
+- Pulumi
 - ZSH Autosuggestions and ZSH Syntax Highlighting
 
 ## Instructions

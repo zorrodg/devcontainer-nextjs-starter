@@ -71,11 +71,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras)
+plugins=(git git-extras zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -115,4 +113,4 @@ fi
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:$HOME/.pulumi/bin

@@ -2,10 +2,38 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "type": "shell",
+      "command": "yarn debug:client-only",
+      "label": "yarn debug:client-only",
+      "dependsOn": "yarn",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
       "type": "func",
       "command": "host start",
       "problemMatcher": "$func-node-watch",
       "isBackground": true,
+      "label": "yarn debug:functions-only",
+      "dependsOn": "yarn",
+      "options": {
+        "cwd": "${workspaceFolder}/src/functions"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "yarn",
+      "command": "yarn",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "yarn prod",
+      "command": "yarn --prod",
+      "problemMatcher": [],
       "options": {
         "cwd": "${workspaceFolder}/src/functions"
       }

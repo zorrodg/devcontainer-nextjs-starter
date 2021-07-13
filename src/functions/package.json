@@ -8,7 +8,7 @@
     "watch": "tsc --w",
     "prestart": "yarn build && func extensions install",
     "start:host": "func start",
-    "dev": "npm-run-all --parallel start:host watch",
+    "dev": "npm-run-all -p start:host watch",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {

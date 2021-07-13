@@ -20,8 +20,14 @@ RUN apt-get update \
     tree \
     jq \
     fonts-powerline \
+    ca-certificates \
+    apt-transport-https \
+    lsb-release \
     # set up locale
     && locale-gen en_US.UTF-8 && fc-cache -vf
+
+# Azure CLI
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 ENV DEBIAN_FRONTEND=dialog
 ENV SHELL=/bin/zsh
@@ -34,26 +40,23 @@ USER ${USER}
 # Make variables available in Shell Env
 ENV USER=${USER}
 ENV GROUP=${GROUP}
+WORKDIR /home/${USER}
 
 # Install Oh-my-ZSH
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # Install powerlevel10k
-RUN git clone https://github.com/romkatv/powerlevel10k.git /home/${USER}/.oh-my-zsh/custom/themes/powerlevel10k
+RUN git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# Configure Linuxbrew
-RUN brew update || true
-# Install handy plugins
-RUN brew install \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting \
-    pulumi \
-    azure-cli
+# Install ZSH Autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Install ZSH Syntax Highlighting
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Install Pulumi
+RUN curl -fsSL https://get.pulumi.com | bash
 
 # Install global tools
 RUN yarn global add \ 
     azure-functions-core-tools@3 --unsafe-perm true
-
-# Restore cache ownership
-RUN sudo chown -R ${USER}:${GROUP} ~/.cache
-RUN mkdir /home/node/overrides

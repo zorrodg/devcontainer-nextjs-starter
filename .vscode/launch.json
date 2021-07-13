@@ -1,12 +1,21 @@
 {
   "version": "0.2.0",
   "configurations": [
+    // {
+    //   "name": "Debug Client",
+    //   "type": "node",
+    //   "request": "attach",
+    //   "port": 9229,
+    //   "skipFiles": ["<node_internals>/**", "node_modules/**"],
+    //   "preLaunchTask": "yarn debug:client-only"
+    // },
     {
-      "name": "Attach to Node Functions",
+      "name": "Debug Azure Functions",
       "type": "node",
       "request": "attach",
       "port": 9229,
-      "preLaunchTask": "func: host start"
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "preLaunchTask": "yarn debug:functions-only"
     }
   ]
 }

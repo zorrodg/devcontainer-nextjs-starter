@@ -8,7 +8,9 @@
   "scripts": {
     "dev:client": "yarn workspace client dev",
     "dev:functions": "yarn workspace functions dev",
-    "dev": "npm-run-all -p dev:client dev:functions"
+    "dev": "npm-run-all -p dev:client dev:functions",
+    "debug:client-only": "npm-run-all -p debug:client dev:functions",
+    "debug:client": "yarn workspace client debug"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.2",

@@ -11,9 +11,6 @@
     "search.exclude": {
       "**/node_modules": true
     },
-    "azureFunctions.deploySubpath": "src/functions",
-    "azureFunctions.projectLanguage": "JavaScript",
-    "azureFunctions.projectRuntime": "~3",
     "debug.internalConsoleOptions": "neverOpen",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
@@ -31,20 +28,13 @@
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
     "dbaeumer.vscode-eslint",
-    "wix.vscode-import-cost",
+    "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "oderwat.indent-rainbow",
-    "ms-azuretools.vscode-docker",
-    "bierner.markdown-preview-github-styles",
-    "yzhang.markdown-all-in-one",
-    "ms-azuretools.vscode-azurefunctions",
-    "meganrogge.template-string-converter",
-    "esbenp.prettier-vscode"
+    "ms-azuretools.vscode-azurefunctions"
   ],
-
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo chown node:node ./node_modules; sudo chown node:node ./ci/node_modules; yarn install; cp -fv ~/overrides/* ~/ || true; cp -fv ~/overrides/.* ~/ || true"
+  "postCreateCommand": "sudo chown $USER:$GROUP ./node_modules; sudo chown $USER:$GROUP ./infrastructure/node_modules; yarn install; cp -fv ~/overrides/* ~/ || true; cp -fv ~/overrides/.* ~/ || true"
 }
